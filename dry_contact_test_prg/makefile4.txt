@@ -1,0 +1,17 @@
+#CC = arm-linux-gcc
+CC = gcc
+CC1 = $(CC) -c 
+CC3 = $(CC) -lpthread 
+
+O_FILES = de_io64board_t.o dry_contact_test.o 
+
+dry_contact_test: $(O_FILES)
+	$(CC) -o dry_contact_test $(O_FILES) -lpthread  -lstdc++
+
+de_io64board_t.o :de_io64board_t.cpp
+	$(CC1) de_io64board_t.cpp
+
+dry_contact_test.o :dry_contact_test.cpp
+	$(CC1) dry_contact_test.cpp
+
+
