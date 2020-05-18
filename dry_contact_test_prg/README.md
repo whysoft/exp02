@@ -1,15 +1,15 @@
 ﻿
-# iobord
+# dry contact iobord
  干接点输出和数字量读取综合电路
- 用TSI io64通信协议，
- 可使用232或485通信。
+ using "TSI io64" commu protocol
+ use 232 or 485 
  
  
- # 提供8数字量读取功能
- # 提供8干接点输出功能
+ # provides 8 channel(max) digital value sensor
+ # provides 8 channel(max) dry contact output
  
  
-测试软件功能说明：
+function:
 11 open relay 1
 12 open relay 2
 13 open relay 3
@@ -29,13 +29,19 @@
 89: only read the input_dig_value
 
 
-# 配置文件说明
-配置文件名为： dry_contact_test.config.txt
-内容是一行，分号隔开的若干字段。
-如果在linux下则写作：
+# config file
+config file name must be： dry_contact_test.config.txt
+the content is one line。the format is here below:
+
+
+linux ：
 com=ttyUSB0;start=1;stop=1;speed=9600;parity=N;datalen=8;timeoutsec=0.95;
-其中 ttyUSB0需要根据当时电脑中串口写成对应的设备名。
-如果在windows下则写作：
+ ttyUSB0 should be the corresponding device name according to the serial port in the computer 。
+
+
+windows ：
 com=50;start=1;stop=1;speed=9600;parity=N;datalen=8;timeoutsec=0.95;
-其中50需要改为当时电脑中串口对应的号码。
+ 50 should be the corresponding device number according to the serial port in the computer 。
+
+
 
